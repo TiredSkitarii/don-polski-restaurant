@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 # class details inspired by code by Bear81 - https://github.com/Bear81/restaurant_booking/tree/main
 
+
 class Booking_Info(models.Model):
     STATUS_CHOICES = [
         ('pending', 'Pending'),
