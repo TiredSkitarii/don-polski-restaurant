@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <form method ="post">
+
+        <div>
+            <label for="booking_date" class="form-label">Booking Date</label>
+            {{ form.booking_date }}
+        </div>
+
+        <div>
+            <label for="booking_time" class="form-label">Booking time</label>
+            {{ form.booking_time }}
+        </div>
+
+        <div>
+            <label for="number_of_guests" class="form-label">Number of Guests</label>
+            {{ form.number_of_guests }}
+        </div>
+
+        <button type="submit" class="btn btn-accent w-100">Save Booking</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

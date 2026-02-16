@@ -1,0 +1,25 @@
+{% extends base.html %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="text-center mb-4">Book a Table</h2>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <p>Please book a table using the link below:</p>
+
+            <form method="post" action="{% url 'create_booking' %}">
+                <button type="submuit" class="btn btn-accent mt-3">Book a Table</button>
+            </form>
+
+            <p>Our restaurant is open from 12pm to 10pm on Mondays to Saturdays</p>
+            <br>
+            <p>Our restaurant is also open on Sundays from 12pm to 4pm, but does not take bookings for this time.</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
