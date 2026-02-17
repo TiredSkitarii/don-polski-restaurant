@@ -21,11 +21,7 @@ class BookingForm(forms.ModelForm):
         widget=forms.DateInput(attr={'type': 'date', 'class': 'form-control'})
     )
     booking_time = forms.ChoiceField(
-        choices = generate_time_choices(),
+        choices=generate_time_choices(),
         widget=forms.Select(attrs={'class': 'form-control'})
     )
-
-
-class Meta:
-    model = Booking_Info
-    fields = ['number_of_guests']
+    number_of_guests = forms.IntegerField(min_value=1)
