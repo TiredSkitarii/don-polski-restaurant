@@ -18,7 +18,7 @@ def generate_time_choices(start=time(12, 0), end=time(22, 0), interval=30):
 
 class BookingForm(forms.ModelForm):
     booking_date = forms.DateField(
-        widget=forms.DateInput(attr={'type': 'date', 'class': 'form-control'})
+        widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'})
     )
     booking_time = forms.ChoiceField(
         choices=generate_time_choices(),
