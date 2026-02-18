@@ -49,7 +49,7 @@ class BookingForm(forms.ModelForm):
         if booking_date and booking_time:
             try:
                 booking_datetime = datetime.strptime(
-                    f"{booking_date} {booking_time}", "%d-%m-%y %H:%M"
+                    f"{booking_date} {booking_time}", "%y-%m-%d %H:%M"
                 )
 
                 if timezone.is_naive(booking_datetime):
