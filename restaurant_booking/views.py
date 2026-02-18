@@ -13,12 +13,11 @@ def create_booking(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.booking_date = form.booking_date
-            booking.booking_time = form.booking_time
+            booking.booking_datetime = form.cleaned_data['booking_datetime']
             booking.user = request.user
             booking.save()
             messages.success(request, "Booking successfully created!")
-            return redirect('home')
+            return redirect('booking_list')
         else:
             messages.error(request, "there was a problem with your booking.")
     else:
@@ -33,9 +32,9 @@ def change_booking(request, pk):
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
-            booking.booking_date = form.booking_date
-            booking.booking_time = form.booking_time
-            booking.number_of_guests = form.number_of_guests
+            booking.booking_date = form.cleaned_data['booking_date']
+            booking.booking_time = form.cleaned_data['booking_time']
+            booking.number_of_guests = form.cleaned_data['number_of_guests']
             booking.status = 'pending'
             booking.save()
             messages.success(request, "Booking updated!")
@@ -44,7 +43,7 @@ def change_booking(request, pk):
             messages.error(request, "Errors detected, please correct to continue")
     else:
         form = BookingForm(instance=booking)
-    
+
     return render(request, 'restaurant_booking/booking_form.html', {'form': form, 'booking': booking})
 
 
@@ -59,4 +58,4 @@ def cancel_booking(request, pk):
 @login_required
 def booking_list(request):
     bookings = Booking_Info.objects.filter(user=request.user)
-    return render(request, 'restaurant_booking/booking_list.html', {'bookings': bookings})
+    return render(request, 'restaurant_booking/bookings_list.html', {'bookings': bookings})

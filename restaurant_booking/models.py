@@ -19,15 +19,14 @@ class Booking_Info(models.Model):
     table = models.OneToOneField(
         'Table', on_delete=models.CASCADE, null=True, blank=True
     )
-    booking_date = models.DateField()
-    booking_time = models.TimeField()
+    booking_datetime = models.DateTimeField()
     number_of_guests = models.PositiveIntegerField()
     status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default='pending'
     )
 
     def __str__(self):
-        return f"Booking for {self.user} on {self.booking_date} at {self.booking_time}"
+        return f"Booking for {self.user} on {self.booking_datetime}"
 
 
 class Table(models.Model):

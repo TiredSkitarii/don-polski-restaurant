@@ -11,6 +11,7 @@
             <p>Please book a table by logging in to your account and using the link below:</p>
 
             <form method="post" action="{% url 'create_booking' %}">
+                {% csrf_token %}
                 <button type="submuit" class="btn btn-accent mt-3">Book a Table</button>
             </form>
 
