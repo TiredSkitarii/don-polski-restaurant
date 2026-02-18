@@ -17,4 +17,4 @@ class TestBookingForm(TestCase):
             'booking_time': '16:00',
             'number_of_guests': 3
         })
-        self.assertTrue(form.is_valid(), f"Form should be valid but has the following errors: {form.errors}") 
+        self.assertTrue(form.is_valid(), f"Form should be valid but has the following errors: {form.errors}")

@@ -23,12 +23,12 @@ class BookingForm(forms.ModelForm):
     )
     booking_time = forms.ChoiceField(
         choices=generate_time_choices(),
-        widget=forms.Select(attrs={'type': 'time', 'class': 'form-control'})
+        widget=forms.Select(attrs={'class': 'form-control'})
     )
 
     class Meta:
         model = Booking_Info
-        fields = ['user', 'number_of_guests']
+        fields = ['number_of_guests']
 
     def __init__(self, *args, **kwargs):
         instance = kwargs.get('instance')
@@ -49,7 +49,7 @@ class BookingForm(forms.ModelForm):
         if booking_date and booking_time:
             try:
                 booking_datetime = datetime.strptime(
-                    f"{booking_date} {booking_time}", "%y-%m-%d %H:%M"
+                    f"{booking_date} {booking_time}", "%Y-%m-%d %H:%M"
                 )
 
                 if timezone.is_naive(booking_datetime):
