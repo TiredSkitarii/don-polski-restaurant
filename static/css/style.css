@@ -5,6 +5,14 @@
     color: whitesmoke;
 }
 
+.navbar-brand {
+    color: whitesmoke;
+}
+
+.nav-link {
+    color:whitesmoke;
+}
+
 .footer {
     background-color: forestgreen;
     color: whitesmoke;
