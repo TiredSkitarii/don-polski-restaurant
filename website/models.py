@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -10,6 +11,14 @@ class RestaurantInfo(models.Model):
     opening_hours = models.TextField()
     description = models.TextField(blank=True)
     about_us = models.TextField(blank=True)
+
+    def __str__(self):
+        return f"{self.name}"
+
+
+class WebsiteImage(models.Model):
+    main_page_image = CloudinaryField('image', default='placeholder')
+    menu_image = CloudinaryField('image', default='placeholder_menu')
 
     def __str__(self):
         return f"{self.name}"

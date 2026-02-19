@@ -8,6 +8,11 @@ def home(request):
     return render(request, 'website/home.html')
 
 
+def menu(request):
+
+    return render(request, 'website/menu.html')
+
+
 def book_table(request):
 
     return render(request, 'website/book_table.html')
