@@ -33,8 +33,7 @@ def change_booking(request, pk):
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
-            booking.booking_date = form.cleaned_data['booking_date']
-            booking.booking_time = form.cleaned_data['booking_time']
+            booking.booking_datetime = form.cleaned_data['booking_datetime']
             booking.number_of_guests = form.cleaned_data['number_of_guests']
             booking.status = 'pending'
             booking.save()
