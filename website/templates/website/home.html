@@ -11,12 +11,12 @@
 </div>
 
 <div>
-    <p><strong>Opening Times:</strong></p>
+    <h5 class="mb-3">Opening Times:</h5>
     <ul>
         <li>Monday - Saturday: 12 Noon to 10pm</li>
         <li>Sunday: 12 Noon to 4pm</li>
     </ul>
-    <p>Please note, that the restaurant is not open for bookings on Sundays</p>
+    <p><em>Please note, that the restaurant is not open for bookings on Sundays</em></p>
 </div>
 
 <div id="home-image" class="image-container mx-auto">
@@ -30,10 +30,10 @@
 
 <div class="d-grid gap-2 col-2 mx-auto">
     {% if user.is_authenticated %}
-    <p class="text-center">Book a table with us now!</p>
+    <p class="text-center mt-3"><strong>Book a table with us now!</strong></p>
     <a href="{% url 'book_table' %}" class="btn btn-success mx-auto">Book Now!</a>
     {% else %}
-    <p class="text-center"> Sign up or Log in to book a table with us now!</p>
+    <p class="text-center mt-3"> <strong>Sign up or Log in to book a table with us now!</strong></p>
     <a href="{% url 'account_signup' %}" class="btn btn-success">Sign Up</a>
     <a href="{% url 'account_login' %}" class="btn btn-secondary">Log in</a>
     {% endif %}
