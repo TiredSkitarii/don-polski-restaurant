@@ -1,24 +1,22 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <!-- Error Messsage -->
- <!-- Somewhat defunct, as it could not be implemented properly -->
+<!-- Somewhat defunct, as it could not be implemented properly -->
 <div class="container mb-5">
+  <div class="text-center mb-4">
+    <h1>We're Sorry</h1>
+  </div>
 
-    <div class="text-center mb-4">
-        <h1> We're Sorry </h1>
-    </div>
+  <div class="text-center mb-4">
+    <p>We were unable to process your booking due to an error</p>
+    <br />
+    <p>Please check the form for errors and try again</p>
+  </div>
 
-    <div class="text-center mb-4">
-        <p>We were unable to process your booking due to an error</p>
-        <br>
-        <p>Please check the form for errors and try again </p>
-    </div>
-
-    <div class="text-center mb-3">
-        <a href="{% url 'booking_list' %}" class="btn btn-accent">Return to Bookings</a>
-    </div>
-
+  <div class="text-center mb-3">
+    <a href="{% url 'booking_list' %}" class="btn btn-accent"
+      >Return to Bookings</a
+    >
+  </div>
 </div>
 
 {% endblock %}

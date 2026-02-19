@@ -1,50 +1,43 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container mt-5">
-    <h2 class="text-center mb-4">
-        Booking Form
-    </h2>
+  <h2 class="text-center mb-4">Booking Form</h2>
 
-    <form method ="post" class="mx-auto" style="max-width: 600px">{% csrf_token %}
+  <form method="post" class="mx-auto" style="max-width: 600px">
+    {% csrf_token %}
 
-        <div>
-            <label for="booking_date" class="form-label">Booking Date</label>
-            {{ form.booking_date }}
-            {% with errors=form.booking_date.errors %}
-                {% if errors %}
-                <div class="text-danger small">{{ errors.0 }}</div>
-                {% endif %}
-            {% endwith %}
-            <p class="text-center mb-2">Note: all dates/times must be in the future</p>
-        </div>
+    <div>
+      <label for="booking_date" class="form-label">Booking Date</label>
+      {{ form.booking_date }} {% with errors=form.booking_date.errors %} {% if
+      errors %}
+      <div class="text-danger small">{{ errors.0 }}</div>
+      {% endif %} {% endwith %}
+      <p class="text-center mb-2">
+        Note: all dates/times must be in the future
+      </p>
+    </div>
 
-        <div>
-            <label for="booking_time" class="form-label">Booking time</label>
-            {{ form.booking_time }}
-            {% with errors=form.booking_date.errors %}
-                {% if errors %}
-                <div class="text-danger small">{{ errors.0 }}</div>
-                {% endif %}
-            {% endwith %}
-        </div>
+    <div>
+      <label for="booking_time" class="form-label">Booking time</label>
+      {{ form.booking_time }} {% with errors=form.booking_date.errors %} {% if
+      errors %}
+      <div class="text-danger small">{{ errors.0 }}</div>
+      {% endif %} {% endwith %}
+    </div>
 
-        <div>
-            <label for="number_of_guests" class="form-label">Number of Guests</label>
-            {{ form.number_of_guests }}
-            {% with errors=form.booking_date.errors %}
-                {% if errors %}
-                <div class="text-danger small">{{ errors.0 }}</div>
-                {% endif %}
-            {% endwith %}
-            <p class="mb-4">P.S: remember to include yourself in the number of guests!</p>
-        </div>
+    <div>
+      <label for="number_of_guests" class="form-label">Number of Guests</label>
+      {{ form.number_of_guests }} {% with errors=form.booking_date.errors %} {%
+      if errors %}
+      <div class="text-danger small">{{ errors.0 }}</div>
+      {% endif %} {% endwith %}
+      <p class="mb-4">
+        P.S: remember to include yourself in the number of guests!
+      </p>
+    </div>
 
-            <button type="submit" class="btn btn-success w-100">Save Booking</button>
-
-    </form>
-
+    <button type="submit" class="btn btn-success w-100">Save Booking</button>
+  </form>
 </div>
 
 {% endblock %}

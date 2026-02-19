@@ -1,42 +1,63 @@
 {% extends 'base.html' %} {% block content %}
 
 <div>
-    <h1 class="display-3 text-center mt-3 mb-3"> Don Polski Restaurant</h1>
+  <h1 class="display-3 text-center mt-3 mb-3">Don Polski Restaurant</h1>
 </div>
 <!-- Welcome message -->
 <div>
-    <h3 class="text-center mt-3 mb-3"><em>Witamy</em> - Welcome!</h3>
-    <br>
-    <p class="text-center">Welcome to our family run restaurant, where you can sample the very best Polish traditional cooking!</p>
+  <h3 class="text-center mt-3 mb-3"><em>Witamy</em> - Welcome!</h3>
+  <br />
+  <p class="text-center">
+    Welcome to our family run restaurant, where you can sample the very best
+    Polish traditional cooking!
+  </p>
 </div>
 <!-- Opening times info -->
 <div>
-    <h5 class="mb-3">Opening Times:</h5>
-    <ul>
-        <li>Monday - Saturday: 12 Noon to 10pm</li>
-        <li>Sunday: 12 Noon to 4pm</li>
-    </ul>
-    <p><em>Please note, that the restaurant is not open for bookings on Sundays</em></p>
+  <h5 class="mb-3">Opening Times:</h5>
+  <ul>
+    <li>Monday - Saturday: 12 Noon to 10pm</li>
+    <li>Sunday: 12 Noon to 4pm</li>
+  </ul>
+  <p>
+    <em
+      >Please note, that the restaurant is not open for bookings on Sundays</em
+    >
+  </p>
 </div>
 <!-- Main hero image -->
 <div id="home-image" class="image-container mx-auto">
-        <img src="../../../static/images/pexels-valeriya-688803.jpg" class="img-fluid" alt="a bowl of Pierogi with Mushrooms and Dill">
+  <img
+    src="../../../static/images/pexels-valeriya-688803.jpg"
+    class="img-fluid"
+    alt="a bowl of Pierogi with Mushrooms and Dill"
+  />
 </div>
 <!-- About us -->
 <div>
-    <h5>About Us:</h5>
-    <p class="mb-4">Situated in the heart of Clevedon, Don Polski has been serving delicious Polish food for over forty years. Jan Cebuka opened the restaurant in 1969. His aim was to serve the food of his beloved homeland to his fellow country men and to introduce his new homeland to the hearty taste of Polish food. Jan’s children Zosia and Pawel  took over the running of the restaurant and have now handed over the reins to the next generation of the family, Pawel’s son, Tomek.</p>
+  <h5>About Us:</h5>
+  <p class="mb-4">
+    Situated in the heart of Clevedon, Don Polski has been serving delicious
+    Polish food for over forty years. Jan Cebuka opened the restaurant in 1969.
+    His aim was to serve the food of his beloved homeland to his fellow country
+    men and to introduce his new homeland to the hearty taste of Polish food.
+    Jan’s children Zosia and Pawel took over the running of the restaurant and
+    have now handed over the reins to the next generation of the family, Pawel’s
+    son, Tomek.
+  </p>
 </div>
 <!-- Log in/Book a table -->
 <div class="d-grid gap-2 col-2 mx-auto">
-    {% if user.is_authenticated %}
-    <p class="text-center mt-3"><strong>Book a table with us now!</strong></p>
-    <a href="{% url 'book_table' %}" class="btn btn-success mx-auto">Book Now!</a>
-    {% else %}
-    <p class="text-center mt-3"> <strong>Sign up or Log in to book a table with us now!</strong></p>
-    <a href="{% url 'account_signup' %}" class="btn btn-success">Sign Up</a>
-    <a href="{% url 'account_login' %}" class="btn btn-secondary">Log in</a>
-    {% endif %}
+  {% if user.is_authenticated %}
+  <p class="text-center mt-3"><strong>Book a table with us now!</strong></p>
+  <a href="{% url 'book_table' %}" class="btn btn-success mx-auto">Book Now!</a>
+  {% else %}
+  <p class="text-center mt-3">
+    <strong>Sign up or Log in to book a table with us now!</strong>
+  </p>
+  <a href="{% url 'account_signup' %}" class="btn btn-success">Sign Up</a>
+  <a href="{% url 'account_login' %}" class="btn btn-secondary">Log in</a>
+  {% endif %}
 </div>
 
 {% endblock %}
