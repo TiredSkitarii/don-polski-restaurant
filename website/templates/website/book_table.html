@@ -7,17 +7,16 @@
     <h2 class="text-center mb-4">Book a Table</h2>
     
     <div class="row">
-        <div class="col-md-6 mb-4">
-            <p>Please book a table by logging in to your account and using the link below:</p>
+        <div class="mx-auto">
+            <p class="text-center">Please book a table by logging in to your account and using the link below:</p>
 
-            <form method="post" action="{% url 'create_booking' %}">
+            <form method="post" class="text-center mt-3" action="{% url 'create_booking' %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-accent mt-3">Book a Table</button>
+                <button type="submit" class="btn btn-success mt-3">Book a Table</button>
             </form>
 
-            <p>Our restaurant is open from 12pm to 10pm on Mondays to Saturdays</p>
-            <br>
-            <p>Our restaurant is also open on Sundays from 12pm to 4pm, but does not take bookings for this time.</p>
+            <p class="text-center mt-4">Our restaurant is open from 12pm to 10pm on Mondays to Saturdays</p>
+            <p class="text-center mt-4">Our restaurant is also open on Sundays from 12pm to 4pm, but does not take bookings for this time. Bookings for Sundays will be rejected by the Restaurant admins.</p>
         </div>
     </div>
 

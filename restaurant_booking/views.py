@@ -19,8 +19,8 @@ def create_booking(request):
             messages.success(request, "Booking successfully created!")
             return redirect('booking_list')
         else:
-            messages.error(request, "there was a problem with your booking.")
-            return redirect('error_page')
+            messages.error(request, "There was a problem with your booking.")
+            # return redirect('error_page')
     else:
         form = BookingForm()
     return render(request, 'restaurant_booking/booking_form.html', {'form': form, 'booking': None})
