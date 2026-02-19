@@ -6,7 +6,7 @@
 
 <div>
     <h3 class="text-center"><em>Witamy</em> - Welcome!</h3>
-
+    <br>
     <p class="text-center">Welcome to our family run restaurant, where you can sample the very best Polish traditional cooking!</p>
 </div>
 
@@ -16,14 +16,14 @@
 </p>
 </div>
 
-<div>
+<div class="d-grid gap-2 col-2 mx-auto">
     {% if user.is_authenticated %}
     <p class="text-center">Book a table with us now!</p>
-    <a href="{% url 'book_table' %}" class="btn btn-accent">Book Now!</a>
+    <a href="{% url 'book_table' %}" class="btn btn-success mx-auto">Book Now!</a>
     {% else %}
     <p class="text-center"> Sign up or Log in to book a table with us now!</p>
-    <a href="{% url 'account_signup' %}" class="btn btn-accent">Sign Up</a>
-    <a href="{% url 'account_login' %}" class="btn btn-accent">Log in</a>
+    <a href="{% url 'account_signup' %}" class="btn btn-success">Sign Up</a>
+    <a href="{% url 'account_login' %}" class="btn btn-secondary">Log in</a>
     {% endif %}
 </div>
 
