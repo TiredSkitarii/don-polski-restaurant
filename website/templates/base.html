@@ -11,9 +11,16 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="a Clevedon based, family run, Polish restaurant, serving a taste of Poland in the middle of the South West">
+
     <title>Don Polski Restaurant</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Favicons genrated by favicon.io -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../static/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../static/images/favicons/favicon-16x16.png">
+
+    <!-- Bootstrap (v5.3.8) CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Custom CSS -->
@@ -62,16 +69,18 @@
         </div>
     </nav>
 
+    <!-- Main Body of page -->
     <main class="container my-4">
         {% block content %}{% endblock %}
     </main>
 
+    <!-- Footer with social media links -->
     <footer class="footer mt-auto">
         <div class="container text-center">
             <p>&copy; {{ current_year }} Don Polski Restaurant. All rights reserved</p>
             <ul class="list-item">
-                <li class="list-inline-item"><a class="text-light" href="#">Facebook</a></li>
-                <li class="list-inline-item"><a class="text-light" href="#">Instagram</a></li>
+                <li class="list-inline-item"><a class="text-light" href="https://www.facebook.com" target="_blank" aria-label="Find us on Facebook (Opens in new tab)" rel="noopener">Facebook</a></li>
+                <li class="list-inline-item"><a class="text-light" href="https://www.instagram.com" target="_blank" aria-label="Find us on Instagram (Opens in new tab)" rel="noopener">Instagram</a></li>
             </ul>
         </div>
     </footer>
