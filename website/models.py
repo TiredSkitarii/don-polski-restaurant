@@ -14,11 +14,3 @@ class RestaurantInfo(models.Model):
 
     def __str__(self):
         return f"{self.name}"
-
-
-class WebsiteImage(models.Model):
-    main_page_image = CloudinaryField('image', default='placeholder')
-    menu_image = CloudinaryField('image', default='placeholder_menu')
-
-    def __str__(self):
-        return f"{self.name}"
