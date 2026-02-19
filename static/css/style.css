@@ -1,5 +1,8 @@
 /* Global styles */
 
+
+/* Navbar Styles */
+
 .navbar {
     background-color: forestgreen;
     color: whitesmoke;
@@ -12,6 +15,8 @@
 .nav-link {
     color:whitesmoke;
 }
+
+/* Footer Styles */
 
 .footer {
     background-color: forestgreen;
