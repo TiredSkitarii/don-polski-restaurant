@@ -32,6 +32,15 @@ h1 {
     color:whitesmoke;
 }
 
+/* Home page */
+
+#home-image {
+    height: 50%;
+    width: 60%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 /* Footer Styles */
 
 .footer {
