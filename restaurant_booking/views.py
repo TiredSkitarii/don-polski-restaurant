@@ -20,6 +20,7 @@ def create_booking(request):
             return redirect('booking_list')
         else:
             messages.error(request, "there was a problem with your booking.")
+            return redirect('error_page')
     else:
         form = BookingForm()
     return render(request, 'restaurant_booking/booking_form.html', {'form': form, 'booking': None})
@@ -40,7 +41,8 @@ def change_booking(request, pk):
             messages.success(request, "Booking updated!")
             return redirect('booking_list')
         else:
-            messages.error(request, "Errors detected, please correct to continue")
+            messages.error(request, "there was a problem with your booking.")
+            return redirect('error_page')
     else:
         form = BookingForm(instance=booking)
 
@@ -59,3 +61,7 @@ def cancel_booking(request, pk):
 def booking_list(request):
     bookings = Booking_Info.objects.filter(user=request.user)
     return render(request, 'restaurant_booking/bookings_list.html', {'bookings': bookings})
+
+
+def error_page(request):
+    return render(request, 'restaurant_booking/error_page.html')
