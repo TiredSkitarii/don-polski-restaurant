@@ -26,6 +26,7 @@ h1 {
 
 .navbar-brand {
     color: whitesmoke;
+    font-family: var(--secondary-font);
 }
 
 .nav-link {
