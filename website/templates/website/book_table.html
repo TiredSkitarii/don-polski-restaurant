@@ -9,12 +9,12 @@
     <div class="row">
         <div class="mx-auto">
             <p class="text-center">Please book a table by logging in to your account and using the link below:</p>
-
+            <!-- link to booking form -->
             <form method="post" class="text-center mt-3" action="{% url 'create_booking' %}">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-success mt-3">Book a Table</button>
             </form>
-
+            <!-- Opening Time info -->
             <p class="text-center mt-4">Our restaurant is open from 12pm to 10pm on Mondays to Saturdays</p>
             <p class="text-center mt-4">Our restaurant is also open on Sundays from 12pm to 4pm, but does not take bookings for this time. Bookings for Sundays will be rejected by the Restaurant admins.</p>
         </div>
