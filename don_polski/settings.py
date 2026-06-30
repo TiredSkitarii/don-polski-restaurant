@@ -49,12 +49,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'django.contrib.sites',
+    'restaurant_booking',
+    'website',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'cloudinary',
-    'restaurant_booking',
-    'website',
+
 ]
 
 SITE_ID = 1
