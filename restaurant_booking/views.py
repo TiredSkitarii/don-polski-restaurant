@@ -51,8 +51,7 @@ def change_booking(request, pk):
 @login_required
 def cancel_booking(request, pk):
     booking = get_object_or_404(Booking_Info, pk=pk, user=request.user)
-    booking.status = 'cancelled'
-    booking.save()
+    booking.delete()
     return redirect('booking_list')
 
 
